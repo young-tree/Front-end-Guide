@@ -1,0 +1,104 @@
+@import url(./common.less);
+
+section {
+  position: relative;
+
+  .playlist {
+    .playlist-content {
+
+      margin-top: 60px;
+
+      .list {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          line-height: 26px;
+          width: 238px;
+
+          h3 {
+            color: #999;
+            font-size: 14px;
+          }
+
+          a {
+            display: inline-block;
+            margin-bottom: 4px;
+            width: 76px;
+          }
+
+
+        }
+
+        .item2 {
+          width: 160px;
+        }
+      }
+
+
+    }
+
+    .dots {
+      text-align: center;
+
+      a {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin: 30px 20px 100px 0;
+        background-color: rgba(0, 0, 0, .1);
+        border-radius: 12px;
+
+        &.active {
+          background-color: rgba(0, 0, 0, .3);
+        }
+      }
+    }
+
+    &:hover .btns .left {
+      left: 0;
+    }
+
+    &:hover .btns .right {
+      right: 0;
+    }
+
+    .btns {
+      a {
+        position: absolute;
+        display: block;
+        width: 79px;
+        height: 108px;
+        background: rgba(0, 0, 0, .05);
+        text-align: center;
+        line-height: 108px;
+        top: 10px;
+        transition: all .6s;
+
+        &.left {
+          left: -79px;
+        }
+
+        &.right {
+          right: -79px;
+        }
+
+        i {
+          vertical-align: middle;
+        }
+
+        &:hover {
+          background: rgba(0, 0, 0, .1);
+        }
+      }
+    }
+  }
+
+  .main {
+    h2 {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 58px;
+    }
+  }
+}

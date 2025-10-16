@@ -1,0 +1,110 @@
+@import url(./common.less);
+
+footer {
+  background-color: @footerBg;
+
+  p,
+  a,
+  span {
+    color: @footerColor;
+
+    &:hover p {
+      color: @HoverColor;
+    }
+  }
+
+  .title {
+    color: @footerColor;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 80px 0 30px;
+  }
+
+  .info {
+
+    .top,
+    .buttom {
+      display: flex;
+
+      .download,
+      .product {
+        margin-right: 83px;
+
+        div {
+          margin-left: -20px;
+          display: flex;
+          text-align: center;
+
+          a:hover {
+            .icon_qm_pc {
+              background-position: -2px -49px;
+            }
+
+            .icon_qm_mac {
+              background-position: -92px -49px;
+            }
+
+            .icon_qm_android {
+              background-position: -190px -49px;
+            }
+
+            .icon_qm_iphone {
+              background-position: -279px -49px;
+            }
+
+            .icon_qm_ss {
+              background-position: -370px -49px;
+            }
+
+            .icon_qm_kg {
+              background-position: -463px -49px;
+            }
+
+            .icon_qm_qp {
+              background-position: -563px -49px;
+            }
+
+            .icon_qm_fan {
+              background-position: -650px -49px;
+            }
+          }
+        }
+
+        .list {
+          a {
+            margin: 18px 18px 18px 22px;
+          }
+        }
+      }
+
+      .link {
+        a {
+          display: inline-block;
+          min-width: 95px;
+          margin-bottom: 12px;
+        }
+      }
+
+      .platform_list {
+        margin-right: 83px;
+
+        a {
+          display: inline-block;
+          min-width: 100px;
+          margin: 0 5px 12px 0;
+
+          &:first-child {
+            margin-right: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright{
+    padding: 24px 0;
+    text-align: center;
+    line-height: 28px;
+    font-size: 12px;
+  }
+}

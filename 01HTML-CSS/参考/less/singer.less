@@ -1,0 +1,120 @@
+@import url(./common.less);
+
+section {
+  .singer_push {
+    background: url(../img/bg_singer.0ba4a7af.webp) 50% 0 repeat-x;
+    width: 100%;
+    height: 376px;
+
+    .section_inner {
+      position: absolute;
+      text-align: center;
+      left: 0;
+      right: 0;
+
+      h1 {
+        background: url(../img/singer_tit.a4376222.png) 0 0;
+        width: 494px;
+        height: 60px;
+        margin: 103px auto 0;
+
+        i {
+          font-size: 0;
+        }
+      }
+
+      h2 {
+        background: url(../img/singer_tit.a4376222.png) 0 -70px;
+        width: 260px;
+        height: 26px;
+        margin: 20px auto;
+
+        i {
+          font-size: 0;
+        }
+      }
+
+      a {
+        display: inline-block;
+        width: 174px;
+        font-size: 18px;
+        line-height: 48px;
+        color: #fff;
+        background-color: transparent;
+        border: 1px solid rgb(117, 115, 115);
+        border-radius: 2px;
+        transition: border .3s;
+
+        &:hover {
+          border: 1px solid #fff;
+        }
+      }
+    }
+  }
+
+  .main {
+    .singer-tag {
+      padding: 34px 0 17px 40px;
+      margin: 30px 0 20px;
+
+      div {
+        margin: 15px 0;
+
+        .all {
+          background-color: @HoverColor;
+          color: #fff;
+          height: 26px;
+          line-height: 27px;
+          padding: 4px 8px;
+          margin: 0 28px 14px 0;
+        }
+
+        a {
+          margin: 0 12px 14px 0;
+          padding: 0 5px;
+        }
+      }
+    }
+
+
+    .singer-list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      li {
+        text-align: center;
+        width: 20%;
+        margin-bottom: 20px;
+        padding: 25px 0;
+
+        h3 {
+          margin: 20px 30px 4px;
+          font-size: 16px;
+        }
+
+        a {
+          display: block;
+
+          img {
+            width: 140px;
+            height: 140px;
+            border-radius: 126px;
+          }
+
+        }
+      }
+    }
+
+    .singer_list_txt {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      li {
+        width: 20%;
+        line-height: 36px;
+      }
+    }
+  }
+}

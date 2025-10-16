@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input class="inputText" type="text">
+
+  <script>
+    function becomeDebounce(fn, delay) {
+      let timer = 0
+      
+      return function(...args) {
+        timer && clearTimeout(timer)
+        timer = setTimeout(() => {
+          fn.apply(this, args)
+          timer = 0;
+        }, delay)
+      }
+    }
+
+    const inputEl = document.querySelector(".inputText")
+    inputEl.addEventListener("input", becomeDebounce(function(event) {
+      console.log(this, event)
+    }, 1000))
+  </script>
+</body>
+</html>

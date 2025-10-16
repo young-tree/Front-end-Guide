@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品列表</title>
+  <link rel="stylesheet/less" href="./less/reset.less">
+  <link rel="stylesheet/less" href="./less/common.less">
+  <link rel="stylesheet/less" href="./less/product.less">
+  <script src="./js/lessc.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="crumb">
+      <span class="home">首页</span>
+      <span class="greater">&gt;</span>
+      <span class="note">笔记本</span>
+    </div>
+
+    <div class="nav">
+      <div class="category item">
+        <div class="not">分类:</div>
+        <div>笔记本</div>
+        <div>台式机</div>
+        <div>智慧屏</div>
+      </div>
+      <div class="server item">
+        <div class="not">服务优惠:</div>
+        <div>仅看有货</div>
+        <div>分期免息</div>
+        <div>优惠商品</div>
+      </div>
+      <div class="sort item">
+        <div class="not">排序:</div>
+        <div class="active">综合</div>
+        <div>评论数</div>
+        <div>价格</div>
+      </div>
+    </div>
+
+    <div class="production"></div>
+  </div>
+
+  <script src="./json/product_data.js"></script>
+  <script src="./js/product.js"></script>
+</body>
+</html>

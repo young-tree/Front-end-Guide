@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input class="inputText" type="text">
+  <button>取消</button>
+
+  <script>
+    function becomeThrottle(fn, awaitTime, { leading = true, trailing = false } = {}) {
+      let startTime = 0
+      let timer = 0
+
+      const _throttle = function(...args) {
+        return new Promise((resolve, reject) => {
+          try {
+            const nowTime = new Date().getTime();
+
+            // 不让它立即执行
+            if (!leading && startTime === 0) startTime = nowTime;
+
+            const finalTime = awaitTime - (nowTime - startTime)
+
+            if (finalTime <= 0) {
+              if(timer) clearTimeout(timer)
+              resolve(fn.apply(this, args))
+              startTime = nowTime
+              timer = 0
+              return
+            }
+
+            // 判断是否需要执行尾部
+            if (trailing && !timer) {
+              timer = setTimeout(() => {
+                resolve(fn.apply(this, args))
+                startTime = new Date().getTime();
+                timer = 0
+              }, finalTime)
+            }
+          } catch(err) {
+            reject(err)
+          }
+        })
+      }
+
+      _throttle.cancel = function() {
+        if (timer) clearTimeout(timer)
+        startTime = 0
+        timer = 0
+      }
+
+      return _throttle
+    }
+
+    const inputEl = document.querySelector(".inputText")
+    const throttle = becomeThrottle(function(event) {
+      console.log(this, event)
+    }, 1000, { leading: true, trailing: true })
+    inputEl.addEventListener("input", throttle);
+
+    const btn = document.querySelector("button");
+    btn.addEventListener("click", () => throttle.cancel());
+  </script>
+</body>
+</html>

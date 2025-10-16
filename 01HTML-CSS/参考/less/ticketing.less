@@ -1,0 +1,580 @@
+@import url(./common.less);
+
+
+body,html{
+  overflow: visible;
+}
+
+main {
+ 
+  section{
+    .wrapper_1200();
+     position: relative;
+     overflow: visible;
+    }
+
+  .one,.two,.three,.four{
+    background: url(../img/bg_detail.webp);
+    background-size: cover;
+    padding-bottom: 30px;
+  }
+
+  .ticket_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .area_left {
+      display: flex;
+
+      .dress_btn {
+        position: relative;
+        display: block;
+        width: 146px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+        .ticking_border();
+
+        // 官网为点击，此处改为经过
+        &:hover .popup {
+          display: block;
+
+        }
+
+        a {
+          display: block;
+
+          i {
+            display: inline-block;
+            top: -2px;
+            margin-left: 8px;
+            width: 10px;
+            height: 6px;
+            background: url(../img/tick_icon_sprite.png) no-repeat -120px -260px;
+          }
+
+          &:hover i {
+            background: url(../img/tick_icon_sprite.png) no-repeat -140px -260px;
+          }
+        }
+
+        // 弹出层
+        .popup {
+          position: absolute;
+          display: none;
+          z-index: 9999;
+          top: 60px;
+          left: 0px;
+          right: auto;
+          width: 490px;
+          height: 400px;
+          background-color: #fff;
+          box-shadow: 0 0 4px rgb(0 0 0 / 35%);
+          border-radius: 4px;
+
+          i {
+            position: absolute;
+            z-index: 99;
+            top: -11px;
+            left: 66px;
+            right: auto;
+            margin-left: 0;
+            width: 17px;
+            height: 11px;
+            display: block;
+            background: url(../img/popup_arrow.png) -11px 0 no-repeat;
+          }
+
+          .pop_detail {
+            margin: 20px 24px;
+            max-height: 400px;
+            font-size: 14px;
+            line-height: 22px;
+            // background-color: #ffc;
+
+            .top {
+              padding-bottom: 2px;
+              border-bottom: solid 1px #e0e0e0;
+
+              .item {
+                display: flex;
+
+                .pop_item {
+                  margin-right: 24px;
+                  font-size: 14px;
+                  color: #777;
+                }
+
+                .city_list {
+                  display: flex;
+                  overflow: hidden;
+                  margin-bottom: 12px;
+                  max-height: 144px;
+                  overflow: hidden;
+                  overflow-y: auto;
+
+                  li {
+                    margin-right: 5px;
+
+                  }
+                }
+              }
+            }
+
+            .content {
+              .search {
+                margin: 18px 0 14px;
+                font-weight: 400;
+                text-align: left;
+
+                p {
+                  color: #000;
+                }
+              }
+
+              .city_zm {
+                margin-bottom: 12px;
+                max-height: 144px;
+                overflow: hidden;
+
+                .zm_list {
+                  display: flex;
+                  flex-wrap: wrap;
+                  box-sizing: border-box;
+                  max-height: 144px;
+                  height: 64px;
+                  overflow: hidden;
+
+                  .item {
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                    margin: 0 12px 12px 0;
+                    background-color: blue;
+
+                    a {
+                      display: block;
+                      width: 100%;
+                      height: 100%;
+                      font-size: 14px;
+                      color: #777;
+                      text-align: center;
+                      background-color: #ececec;
+
+                      &:hover {
+                        color: @HoverColor;
+                      }
+                    }
+
+
+                  }
+                }
+
+
+              }
+
+              .search_zmcity {
+                margin-bottom: 12px;
+                max-height: 144px;
+                overflow: hidden;
+                overflow-y: auto;
+
+                .zmucity_item {
+                  display: flex;
+                  border-color: blue;
+
+                  span {
+                    margin: 0 10px 6px 0;
+                    font-size: 14px;
+                    color: #000;
+                  }
+
+                  .list {
+                    display: flex;
+
+                    li {
+                      margin: 0 10px 6px 0;
+                      font-size: 14px;
+                      color: #000;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      }
+
+
+      .ticket_search {
+        box-sizing: border-box;
+        margin-left: 20px;
+        height: 50px;
+
+        .search_input {
+          display: flex;
+          align-items: center;
+
+          input {
+            box-sizing: border-box;
+            width: 428px;
+            height: 50px;
+            padding: 0 10px;
+            .ticking_border();
+            //清除input的右边框
+            border-right: 0;
+          }
+
+          .search_btn {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            background-color: @HoverColor;
+            .ticking_border();
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            i {
+              display: flex;
+              align-items: center;
+              display: inline-block;
+              width: 22px;
+              height: 22px;
+              background: url(../img/search_ticket.png) no-repeat 0 0;
+            }
+
+            span {
+              text-indent: 9999;
+            }
+          }
+        }
+      }
+    }
+
+    .area_right {
+
+      .more {
+        width: 100%;
+        height: 100%;
+
+        &:hover .more_arrow {
+          .hoverLocal()
+        }
+
+        .more_arrow {
+          width: 7px;
+          height: 12px;
+          margin-left: 6px;
+          background: url(../img/tick_icon_sprite.png) no-repeat -120px -40px;
+
+        }
+      }
+
+
+
+    }
+  }
+
+  .ticket_tab {
+
+    margin: 0 auto;
+    padding: 25px 0;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+
+
+    .tab_list {
+      display: flex;
+
+
+      .item {
+        flex: 1;
+
+        .active {
+          .tabActiveColor();
+
+          .icon-all {
+            background-position: -280px -43px;
+          }
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          height: 31px;
+          line-height: 31px;
+
+          &:hover {
+            .icon-all {
+              background-position: -280px -43px;
+            }
+
+            .icon-concert {
+              background-position: -40px -40px;
+            }
+
+            .icon-live {
+              background-position: -360px -40px;
+
+            }
+
+            .icon-music {
+              background-position: -80px -40px;
+
+            }
+
+            .icon-dance {
+              background-position: -160px -40px;
+            }
+
+            .icon-modern {
+              background-position: -200px -40px;
+            }
+
+            .icon-other {
+              background-position: -320px -40px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+
+  //  nav_hd 公共样式
+  .nav_hd {
+    display: flex;
+    height: 48px;
+    line-height: 48px;
+    padding: 50px 0 24px;
+    
+    .nav_left {
+      flex: 1;
+      align-items: center;
+      text-align: center;
+      .sectionHdColor()
+    }
+
+    .nav_right {
+      .more {
+        width: 100%;
+        height: 100%;
+
+        &:hover .more_arrow {
+          .hoverLocal()
+        }
+
+        .more_arrow {
+          width: 7px;
+          height: 12px;
+          margin-left: 6px;
+          background: url(../img/tick_icon_sprite.png) no-repeat -120px -40px;
+        }
+      }
+
+
+    }
+  }
+
+  .nav_grid {
+    position: relative;
+    padding-left: 346px;
+    display: flex;
+    justify-content: space-between;
+    height: 416px;
+    margin-bottom: 80px;
+
+    .grid_left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 316px;
+      margin-right: 40px;
+
+      .grid_img {
+        position: relative;
+        margin-right: 40px;
+
+        display: block;
+        width: 316px;
+        height: 416px;
+        overflow: hidden;
+
+        img {
+          width: 316px;
+          height: 416px;
+          transition: transform .7s;
+        }
+
+        &:hover img {
+          .TabItemAnimation()
+        }
+      }
+
+      .info {
+        position: absolute;
+        box-sizing: border-box;
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        display: block;
+        width: 316px;
+        padding: 12px 16px 10px;
+        background-color: rgba(0, 0, 0, .8);
+
+        h3 {
+          margin-bottom: 2px;
+          font-size: 20px;
+          color: #fff;
+          font-weight: 400;
+          .two_text_ellipsis()
+        }
+
+        .info_price {
+          font-size: 16px;
+          color: #fff;
+
+          em {
+            font-size: 24px;
+            font-style: normal;
+          }
+
+        }
+      }
+
+    }
+
+    .grid_right {
+      display: flex;
+      width: 854px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      overflow: hidden;
+
+      .grid_item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 28px;
+        width: 427px;
+        height: 194px;
+        overflow: hidden;
+
+        .item_left {
+          display: block;
+          width: 148px;
+          height: 194px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            transition: all .6s;
+            &:hover {
+              .TabItemAnimation()
+            }
+
+          }
+
+        }
+
+        // item右侧
+        .item_right {
+          position: relative;
+          width: 252px;
+          margin-right: 11px;
+          height: 194px;
+          overflow: hidden;
+
+          .title {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: @footerBg;
+            font-weight: 400;
+            .two_text_ellipsis()
+          }
+
+          .item_price {
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            font-size: 16px;
+            color: #01bc83;
+            line-height: 1.2;
+
+            em {
+              margin-right: 2px;
+              font-size: 24px;
+              font-style: normal;
+            }
+          }
+
+        }
+      }
+
+    }
+
+  }
+
+}
+
+aside {
+  position: fixed;
+  top: 164px;
+  right: 40px;
+  padding: 18px;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 7%);
+  background-color: #fff;
+  z-index: 200;
+
+  img {
+    display: block;
+    margin: 0 auto 9px;
+    width: 102px;
+
+  }
+
+  p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #a6a6a6;
+    text-align: center;
+  }
+
+  .dowlond {
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+    height: 26px;
+    border-radius: 26px;
+    line-height: 26px;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    background-color: @HoverColor;
+
+    &:hover {
+      color: #fff;
+      background-color: #2caf6f;
+    }
+
+    .dowonld_icon {
+      display: inline-block;
+      margin-right: 4px;
+      vertical-align: -1px;
+      width: 13px;
+      height: 14px;
+      background: url(../img/tick_icon_sprite.png) no-repeat -160px -320px;
+    }
+  }
+
+
+}

@@ -1,0 +1,114 @@
+.crumb {
+  height: 63px;
+  line-height: 63px;
+
+  .home {
+    color: #666;
+  }
+
+  .greater {
+    margin: 0 5px;
+  }
+}
+
+.nav {
+  margin-bottom: 20px;
+  background-color: #fff;
+
+  .item {
+    display: flex;
+    height: 48px;
+    line-height: 48px;
+
+    div {
+      width: 104px;
+      cursor: pointer;
+
+      &:first-child {
+        padding-left: 20px;
+      }
+    }
+    .not {
+      cursor: auto;
+      color: #666;
+    }
+
+    .active {
+      color: red;
+    }
+  }
+}
+
+.production {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+    width: 291px;
+    cursor: pointer;
+    background-color: #fff;
+
+    img {
+      width: 180px;
+      height: 180px;
+      margin: 30px 0;
+    }
+
+    .title {
+      font-size: 14px;
+      font-weight: 700;
+      height: 30px;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #666;
+      height: 35px;
+    }
+
+    .price {
+      font-size: 16px;
+      color: #f00;
+      height: 30px;
+      font-weight: 700;
+    }
+
+    .activities {
+      .tip {
+        display: inline-block;
+        border: 1px solid #f00;
+        padding: 1px 2px;
+        color: red;
+        border-radius: 4px;
+        
+        &:first-child {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .comment {
+      height: 40px;
+      line-height: 40px;
+      color: #666;
+
+      span {
+        &:first-child {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  div {
+    &:empty {
+      width: 291px;
+      height: 0;
+    }
+  }
+}

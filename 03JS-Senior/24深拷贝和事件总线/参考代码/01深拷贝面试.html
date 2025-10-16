@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 判断一个变量是否是对象类型
+    function isObject(value) {
+      const valueType = typeof value
+      return (value !== null) && (valueType === "object" || valueType === "function")
+    }
+
+    function deepCopy(obj) {
+      if (!isObject(obj)) {
+        return obj
+      }
+
+      const newObj = {}
+      for (const key in obj) {
+        newObj[key] = deepCopy(obj[key])
+      }
+      return newObj
+    }
+
+    const infoObj = {
+      name: "yt",
+      age: 22,
+      friend: {
+        name: "张三",
+        age: 22,
+        hobbies: {
+          name: "王者荣耀",
+          time: "6年"
+        }
+      }
+    }
+
+    const newInfoObj = deepCopy(infoObj);
+  </script>
+</body>
+</html>

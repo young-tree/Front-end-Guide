@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input class="inputText" type="text">
+
+  <script>
+    function becomeThrottle(fn, awaitTime) {
+      let startTime = 0
+
+      return function(...args) {
+        const nowTime = new Date().getTime()
+        const finalTime = awaitTime - (nowTime - startTime)
+        console.log(finalTime)
+        if (finalTime <= 0) {
+          fn.apply(this, args)
+          startTime = nowTime
+        }
+      }
+    }
+
+    const inputEl = document.querySelector(".inputText")
+    inputEl.addEventListener("input", becomeThrottle(function(event) {
+      console.log(this, event)
+    }, 10000))
+  </script>
+</body>
+</html>
